@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CoffeelogApp</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyARc9-Z9JNVHEW1lbAOP3q-cLJ4prA2CC4",
+      authDomain: "coffee-log-1c88b.firebaseapp.com",
+      databaseURL: "https://coffee-log-1c88b.firebaseio.com",
+      projectId: "coffee-log-1c88b",
+      storageBucket: "coffee-log-1c88b.appspot.com",
+      messagingSenderId: "774979578285"
+    };
+    firebase.initializeApp(config);
+  </script>
+</body>
+</html>
