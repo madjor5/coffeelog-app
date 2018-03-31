@@ -1,0 +1,16 @@
+@import "../../scss/_variables";
+
+.logo {
+  display: block;
+  height: 80px;
+  margin: 80px 0 $small-padding 0;
+  text-indent: -10000px;
+  background: url(/assets/logo.svg) no-repeat center center;
+}
+
+.login {
+  padding: $base-padding;
+  mat-input-container {
+    width: 100%;
+  }
+}
