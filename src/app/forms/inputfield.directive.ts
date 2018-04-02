@@ -8,7 +8,8 @@ import { UUID } from "angular2-uuid";
     'class': 'input-field',
     '[attr.id]': 'id',
     '(focus)': '_focusChanged(true)',
-    '(blur)': '_focusChanged(false)'
+    '(blur)': '_focusChanged(false)',
+    '(ngModelChange)': '_inputChanged()'
   }
 })
 export class InputfieldDirective {
@@ -32,16 +33,21 @@ export class InputfieldDirective {
     
     this._el = el;
     this._renderer = renderer;
-
-    // Set label attr. for = id
-    
   }
 
   _focusChanged(isFocused: boolean): void {
     if (isFocused) {
       this._renderer.addClass(this._el.nativeElement.parentElement, 'active');
     } else {
-      this._renderer.removeClass(this._el.nativeElement.parentElement, 'active');
+      if( this._el.nativeElement.value.length == 0 ) {
+        this._renderer.removeClass(this._el.nativeElement.parentElement, 'active');
+      }
+    }
+  }
+
+  _inputChanged(): void {
+    if(this._el.nativeElement.value.length > 0) {
+      this._renderer.addClass(this._el.nativeElement.parentElement, 'active');
     }
   }
 
