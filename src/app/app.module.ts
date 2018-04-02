@@ -1,23 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from "./app-routing/app-routing.module";
 import { LoginComponent } from './login/login.component';
-import { InputfieldComponent } from './forms/inputfield/inputfield.component';
+import { InputfieldDirective } from './forms/inputfield.directive';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    InputfieldComponent
+    InputfieldDirective
   ],
   imports: [
     BrowserModule,
     FlexLayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

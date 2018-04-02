@@ -1,5 +1,8 @@
 <section class="login dark-bg">
   <span class="logo">CoffeeLog</span>
 
-  <app-inputfield value="test"></app-inputfield>
+  <div class="input-field-container">
+    <input formInputfield [(ngModel)]="username" id="username">
+    <label class="input-field-label" for="username">Username</label>
+  </div>
 </section>

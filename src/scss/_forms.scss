@@ -1,0 +1,47 @@
+@import "variables";
+@import "colors";
+
+.input-field-container {
+  position: relative;
+  margin: 1rem 0;
+}
+
+.input-field {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba($primary-font-color, .38);
+  border-radius: 0;
+  outline: none;
+  height: 3rem;
+  width: 100%;
+  font-size: $base-font-size;
+  margin: 0 0 8px 0;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;
+  color: $primary-font-color;
+  &:focus {
+    border-bottom: solid 1px $primary-font-color;
+    box-shadow: 0 1px 0 0 $primary-font-color;
+  }
+}
+
+.input-field-label {
+  color: $primary-font-color;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1rem;
+  cursor: text;
+  transition: transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out, opacity .2s ease-out;
+  transform-origin: 0% 100%;
+  text-align: initial;
+  opacity: .38;
+  transform: translateY(15px);
+  .active & {
+    opacity: 1;
+    transform-origin: 0 0;
+    transform: translateY(-15px) scale(.8);
+  }
+}

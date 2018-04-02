@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from "@angular/forms";
+
+import { InputfieldDirective } from "../forms/inputfield.directive";
 
 @Component({
   selector: 'app-login',
@@ -11,5 +14,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  private username: string = '';
+  private password: string = '';
 
 }

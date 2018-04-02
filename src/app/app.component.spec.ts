@@ -1,9 +1,9 @@
 import { APP_BASE_HREF } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing'
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from "./app-routing/app-routing.module";
-import { InputfieldComponent } from "./forms/inputfield/inputfield.component";
 import { LoginComponent } from "./login/login.component";
 
 describe('AppComponent', () => {
@@ -11,12 +11,12 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        LoginComponent,
-        InputfieldComponent
+        LoginComponent
       ],
       imports: [
         RouterTestingModule,
-        AppRoutingModule
+        AppRoutingModule,
+        FormsModule
       ],
       providers: [{provide: APP_BASE_HREF, useValue : '/' }]
     }).compileComponents();
