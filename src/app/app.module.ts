@@ -8,6 +8,13 @@ import { AppRoutingModule } from "./app-routing/app-routing.module";
 import { LoginComponent } from './login/login.component';
 import { InputfieldDirective } from './forms/inputfield.directive';
 
+import { AngularFireModule } from "angularfire2";
+import { environment } from "../environments/environment";
+import { AngularFireAuthModule } from "angularfire2/auth";
+
+import { AuthService } from "./auth.service";
+
+
 
 @NgModule({
   declarations: [
@@ -19,9 +26,11 @@ import { InputfieldDirective } from './forms/inputfield.directive';
     BrowserModule,
     FlexLayoutModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
