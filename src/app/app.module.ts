@@ -13,6 +13,7 @@ import { environment } from "../environments/environment";
 import { AngularFireAuthModule } from "angularfire2/auth";
 
 import { AuthService } from "./auth.service";
+import { CreateProfileComponent } from './create-profile/create-profile.component';
 
 
 
@@ -20,7 +21,8 @@ import { AuthService } from "./auth.service";
   declarations: [
     AppComponent,
     LoginComponent,
-    InputfieldDirective
+    InputfieldDirective,
+    CreateProfileComponent
   ],
   imports: [
     BrowserModule,
