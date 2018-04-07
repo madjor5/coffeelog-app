@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-top-navigation',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopNavigationComponent implements OnInit {
 
-  constructor() { }
+  @Input() featureText: string;
+
+  constructor(private _location: Location) { }
+
+  goBack(): void {
+    this._location.back();
+  }
 
   ngOnInit() {
   }

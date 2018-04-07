@@ -1,0 +1,28 @@
+@import "../../scss/colors";
+
+nav.top-navigation {
+  height: 64px;
+  line-height: 64px;
+  padding: 0 1rem;
+  font-size: 18px;
+  text-transform: uppercase;
+
+  a {
+    color: $primary-font-color;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:before {
+      content: "\E5C4";
+      vertical-align: top;
+      display: inline-block;
+      font-family: 'Material Icons';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 25px;
+      margin: 0 10px 0 8px;
+      -webkit-font-smoothing: antialiased
+    }
+  }
+}
