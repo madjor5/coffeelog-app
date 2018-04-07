@@ -10,6 +10,7 @@ import { Observable } from "rxjs/Observable";
 export class AuthService {
   user: Observable<firebase.User>;
   userDetails: firebase.User = null;
+  error = null;
 
   constructor(private firebaseAuth: AngularFireAuth, private router: Router) {
     this.user = firebaseAuth.authState;
@@ -20,7 +21,6 @@ export class AuthService {
           if (this.router.routerState.snapshot.url == '/login') {
             this.router.navigate(['/']);
           }
-          console.log(this.userDetails, this.router.routerState.snapshot.url);
         } else {
           this.userDetails = null;
           this.router.navigate(['/login']);
@@ -34,11 +34,12 @@ export class AuthService {
       .auth
       .signInWithEmailAndPassword(email, password)
       .then(value => {
-        console.log('Nice, logged in');
+        this.error = null;
         this.router.navigate(['/dashboard']);
       })
       .catch(err => {
-        console.log('Something went wrong:', err.message);
+        this.error = err.code;
+        console.log('Something went wrong:', err.message, err);
       });
   }
 

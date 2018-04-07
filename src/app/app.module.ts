@@ -14,6 +14,7 @@ import { AngularFireAuthModule } from "angularfire2/auth";
 
 import { AuthService } from "./auth.service";
 import { CreateProfileComponent } from './create-profile/create-profile.component';
+import { TopNavigationComponent } from './top-navigation/top-navigation.component';
 
 
 
@@ -22,7 +23,8 @@ import { CreateProfileComponent } from './create-profile/create-profile.componen
     AppComponent,
     LoginComponent,
     InputfieldDirective,
-    CreateProfileComponent
+    CreateProfileComponent,
+    TopNavigationComponent
   ],
   imports: [
     BrowserModule,

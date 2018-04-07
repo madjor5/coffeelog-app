@@ -3,7 +3,7 @@
 
 .input-field-container {
   position: relative;
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
 
 .input-field {
@@ -19,14 +19,20 @@
   padding: 0;
   box-shadow: none;
   box-sizing: content-box;
-  transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;
+  transition: border .3s,;
   color: $primary-font-color;
   &:focus {
-    border-bottom: solid 1px $primary-font-color;
-    box-shadow: 0 1px 0 0 $primary-font-color;
+    border-bottom: solid 2px $primary-font-color;
     &+label {
       opacity: 1;
     }
+  }
+  .error & {
+    border-bottom: solid 2px $error-color;
+  }
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 50px $primary-color inset;
+    -webkit-text-fill-color: $primary-font-color;
   }
 }
 
@@ -45,6 +51,22 @@
   .active & {
     transform-origin: 0 0;
     transform: translateY(-15px) scale(.8);
+  }
+  .error & {
+    color: $error-color;
+    opacity: 1;
+  }
+}
+
+// helper texts
+.helper-text {
+  position: relative;
+  min-height: 18px;
+  display: block;
+  font-size: 12px;
+  color: rgba($primary-font-color,0.54);
+  &.error {
+    color: rgba($error-color, .54);
   }
 }
 
