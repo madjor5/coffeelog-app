@@ -4,7 +4,7 @@
     {{diagnostic}}
     <div class="input-field-container" [ngClass]="{'error': this.emailHasError()}">
       <input type="text" name="username" formInputfield [(ngModel)]="email" #emailField="ngModel" id="email" autocomplete="off" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-      <label class="input-field-label" for="email">Email</label>
+      <label class="input-field-label" for="email">Email*</label>
       <span class="helper-text error" *ngIf="this.isInvalidEmail()">Incorrect email format</span>
       <span class="helper-text error" *ngIf="this.isUnknownUser()">Unknown user</span>
     </div>
@@ -12,9 +12,6 @@
       <input type="password" [ngClass]="{'error': this.isWrongPassword()}" formInputfield [(ngModel)]="password" id="password" required>
       <label class="input-field-label" for="password">Password*</label>
       <span class="helper-text error" *ngIf="this.isWrongPassword()">Incorrect password</span>
-    </div>
-    <div class="input-field-container" *ngIf="this.authService.error">
-      <span class="error">{{this.authService.error}}</span>
     </div>
     <div class="input-field-container">
       <button class="btn" (click)="login()" [disabled]="!email || !password">Login</button>

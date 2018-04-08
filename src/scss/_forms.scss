@@ -27,6 +27,10 @@
       opacity: 1;
     }
   }
+  .dark & {
+    color: $dark-font-color;
+    border-color: rgba($dark-font-color, .38);
+  }
   .error & {
     border-bottom: solid 2px $error-color;
   }
@@ -48,6 +52,9 @@
   text-align: initial;
   opacity: .38;
   transform: translateY(15px);
+  .dark & {
+    color: $dark-font-color;
+  }
   .active & {
     transform-origin: 0 0;
     transform: translateY(-15px) scale(.8);

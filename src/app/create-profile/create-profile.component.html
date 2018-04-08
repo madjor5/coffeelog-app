@@ -1,8 +1,24 @@
-<app-top-navigation [featureText]="'Create Profile'"></app-top-navigation>
+<div class="flexContainer">
+  <app-top-navigation [featureText]="'Create Profile'"></app-top-navigation>
 
-<div>
-  Profile Image
-</div>
-<div>
-  Email + password
+  <div class="user-image">
+    <div class="preview"></div>
+    <!-- <input type="file" (change)="selectedFile($event)"> -->
+  </div>
+  <div class="light-form">
+    <div class="input-field-container dark">
+      <input type="text" name="username" formInputfield [(ngModel)]="email" #emailField="ngModel" id="email" autocomplete="off" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+      <label class="input-field-label" for="email">Email</label>
+      <span class="helper-text error" *ngIf="this.isInvalidEmail()">Incorrect email format</span>
+      <span class="helper-text error" *ngIf="this.isEmailUsed()">Email is already in use</span>
+    </div>
+    <div class="input-field-container dark">
+      <input type="password" formInputfield [(ngModel)]="password" id="password" required>
+      <label class="input-field-label" for="password">Password*</label>
+      <span class="helper-text error" *ngIf="this.isPasswordWeak()">Password is too weak, must be at least 6 characters long</span>
+    </div>
+    <div class="input-field-container">
+      <button class="btn" (click)="createUser()" [disabled]="!email || !password">Create profile</button>
+    </div>
+  </div>
 </div>

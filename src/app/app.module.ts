@@ -11,12 +11,12 @@ import { InputfieldDirective } from './forms/inputfield.directive';
 import { AngularFireModule } from "angularfire2";
 import { environment } from "../environments/environment";
 import { AngularFireAuthModule } from "angularfire2/auth";
+import { AngularFireStorageModule } from "angularfire2/storage";
 
 import { AuthService } from "./auth.service";
+import { ImageService } from "./image.service";
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { TopNavigationComponent } from './top-navigation/top-navigation.component';
-
-
 
 @NgModule({
   declarations: [
@@ -32,9 +32,10 @@ import { TopNavigationComponent } from './top-navigation/top-navigation.componen
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, ImageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

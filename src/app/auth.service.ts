@@ -39,7 +39,19 @@ export class AuthService {
       })
       .catch(err => {
         this.error = err.code;
-        console.log('Something went wrong:', err.message, err);
+      });
+  }
+
+  createUser(email: string, password: string) {
+    this.firebaseAuth
+      .auth
+      .createUserWithEmailAndPassword(email, password)
+      .then(value => {
+        this.error = null;
+        this.router.navigate(['/dashboard']);
+      })
+      .catch(err => {
+        this.error = err.code;
       });
   }
 

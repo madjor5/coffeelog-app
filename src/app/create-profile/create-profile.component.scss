@@ -1,0 +1,31 @@
+@import "../../scss/colors";
+
+.user-image {
+  background: $lighter-bg-color;
+  padding: 3rem 1rem;
+  .preview {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    background-color: $primary-font-color;
+    border-radius: 50%;
+    background-image: url(/assets/usr-fallback.svg);
+    background-repeat: no-repeat;
+    background-position: center 1rem;
+  }
+  img {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    display: block;
+    background: blue;
+    border-radius: 50%;
+  }
+}
+
+.light-form {
+  flex-grow: 2;
+  background-color: $primary-font-color;
+  padding: 1rem;
+  color: black;
+}
