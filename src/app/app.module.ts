@@ -17,6 +17,7 @@ import { AuthService } from "./auth.service";
 import { ImageService } from "./image.service";
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { TopNavigationComponent } from './top-navigation/top-navigation.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TopNavigationComponent } from './top-navigation/top-navigation.componen
     LoginComponent,
     InputfieldDirective,
     CreateProfileComponent,
-    TopNavigationComponent
+    TopNavigationComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
