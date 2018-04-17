@@ -1,0 +1,15 @@
+.collection {
+  position: relative;
+}
+.collection-item {
+  line-height: 1.5rem;
+  padding: 10px 20px;
+  margin: 0;
+
+}
+a.collection-item {
+  display: block;
+  transition: .25s;
+  color: red;
+  text-decoration: none;
+}

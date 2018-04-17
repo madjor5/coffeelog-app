@@ -1,0 +1,14 @@
+@import '../../scss/colors';
+
+.featured-coffee {
+  max-width: 100%;
+}
+
+.dashboard-links {
+  flex-grow: 1;
+  padding: 1rem 0;
+  background: $light-bg-color;
+  a {
+    color: $dark-font-color;
+  }
+}

@@ -1,3 +1,12 @@
-<p>
-  dashboard works!
-</p>
+<div class="flexContainer">
+  <app-top-navigation [featureText]="'Create Profile'"></app-top-navigation>
+
+  <img src="/assets/home-img.jpg" alt="Featured Coffee Add" class="featured-coffee">  
+
+  <div class="collection dashboard-links">
+    <a routerLink="/coffeeshops" class="collection-item">Nearby Cafés</a>
+    <a routerLink="/roasters" class="collection-item">Nearby Roasters</a>
+    <a routerLink="/guides" class="collection-item">Brew guides</a>
+  </div>
+</div>
+
